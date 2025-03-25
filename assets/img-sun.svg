@@ -1,0 +1,11 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="sunmoon sun" viewBox="-2 -2 44 44" width="40"  height="40" >
+    <defs>
+      <circle id="imagery-sun-path" cx="20" cy="20" r="20"></circle>
+      <clipPath id="imagery-sun-clip">
+        <use xlink:href="#imagery-sun-path"></use>
+      </clipPath>
+    <circle id="imagery-sun-path" cx="20" cy="20" r="20"></circle><circle id="imagery-sun-path" cx="20" cy="20" r="20"></circle></defs>
+    <g stroke-opacity="0" stroke="#000000" fill="#CD2F7B" stroke-width="2px">
+      <use xlink:href="#imagery-sun-path" stroke-width="4px" clip-path="url(#imagery-sun-clip)"></use>
+    </g>
+  </svg>

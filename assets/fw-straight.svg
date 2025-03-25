@@ -1,0 +1,20 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="strategy-bezier-path" viewBox="0 0 100 100" preserveAspectRatio="none" width="298" height="596">
+  <path d="M 0 25
+           Q 31.25 32.8125, 62.5 40.625
+           Q 93.75 48.4375, 100 50
+           C 70 57.5, 80 55, 50 62.5
+           C 20 70, 30 67.5, 0 75" stroke="#B4C8E1" fill="none" stroke-width="2px">
+  <!--<animate attributeName="d" dur="0.35s" fill="freeze" keyTimes="0; 1" keySplines=".4 0 .2 1" calcMode="spline"    
+    to="M 0 25 Q 55 50, 65 32.5 Q 75 15, 100 50 C 65 32.5, 55 75, 35 65 C 15 55, 15 55, 0 75"
+    begin="tilestrategy.mouseover"
+  />
+  <animate attributeName="d" dur="0.35s" fill="freeze" keyTimes="0; 1" keySplines=".4 0 .2 1" calcMode="spline"  
+    to="M 0 25
+           Q 31.25 32.8125, 62.5 40.625
+           Q 93.75 48.4375, 100 50
+           C 70 57.5, 80 55, 50 62.5
+           C 20 70, 30 67.5, 0 75"
+    begin="tilestrategy.mouseout"
+  />-->
+  </path>
+</svg>
