@@ -1,13 +1,30 @@
 'use client'
 
-import { motion, useMotionValue, useTransform, useSpring, useMotionValueEvent } from "motion/react"
+import { motion, useMotionValue, useTransform, useSpring, useMotionValueEvent } from "framer-motion"
 import LogoXS from "@/assets/logo-xs.svg"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
 export default function Initial() {
     const fakeScroll = useMotionValue(0);
+    const [scaleValue, setScaleValue] = useState(0);
+    const containerRef = useRef<HTMLDivElement>(null);
+    
+    const logoX = useMotionValue(0);
+    const logoY = useMotionValue(0);
+    const logoScale = useMotionValue(1);
 
-    const [scaleValue, setScaleValue] = useState(0); // Default state
+    const smoothLogoX = useSpring(logoX, { 
+        stiffness: 100, 
+        damping: 20 
+    });
+    const smoothLogoY = useSpring(logoY, { 
+        stiffness: 100, 
+        damping: 20 
+    });
+    const smoothLogoScale = useSpring(logoScale, { 
+        stiffness: 100, 
+        damping: 20 
+    });
 
     useEffect(() => {
         let touchStartY = 0;
@@ -16,13 +33,13 @@ export default function Initial() {
           fakeScroll.set(Math.min(Math.max(fakeScroll.get() + e.deltaY * 0.001, 0), 1));
         };
       
-        const handleTouchStart = (e: TouchEvent) => {
-          touchStartY = e.touches[0].clientY;
-        };
-      
         const handleTouchMove = (e: TouchEvent) => {
           const deltaY = touchStartY - e.touches[0].clientY;
           fakeScroll.set(Math.min(Math.max(fakeScroll.get() + deltaY * 0.001, 0), 1));
+          touchStartY = e.touches[0].clientY;
+        };
+      
+        const handleTouchStart = (e: TouchEvent) => {
           touchStartY = e.touches[0].clientY;
         };
       
@@ -36,7 +53,6 @@ export default function Initial() {
           window.removeEventListener("touchmove", handleTouchMove);
         };
       }, [fakeScroll]);
-      
 
     const scaleRaw = useTransform(fakeScroll, [0.5, 1], [1, 0.12]);
     const background = useTransform(fakeScroll, [0, 0.15], ["#ffffff", "#0000ee"]);
@@ -46,18 +62,38 @@ export default function Initial() {
 
     useMotionValueEvent(fakeScroll, "change", (latest) => {
         setScaleValue(latest);
+
+        if (containerRef.current) {
+            const containerRect = containerRef.current.getBoundingClientRect();
+            
+            if (latest >= 0.5) {
+                // Normalize scroll value between 0.5 and 1 to 0-1 range
+                const normalizedScroll = Math.min((latest - 0.5) * 2, 1);
+                
+                const targetX = normalizedScroll * (containerRect.width / 2);
+                const targetY = -normalizedScroll * (containerRect.height / 2);
+                
+                // Scale up logo as div scales down
+                const targetScale = 1 + (normalizedScroll * 4);
+
+                logoX.set(targetX);
+                logoY.set(targetY);
+                logoScale.set(targetScale);
+            }
+        }
     });
 
     return (
         <section className="absolute top-0 left-0 z-20 w-screen h-screen grid place-items-center">
             <motion.div
-                className="relative border border-dropbox-blue-light w-5/6 mx-auto aspect-square p-4"
+                ref={containerRef}
+                className="relative border border-dropbox-blue-light w-5/6 mx-auto aspect-square p-4 grid"
                 style={{ scale, background }}
                 transition={{ duration: 0.15, ease: "easeInOut" }}
             >
                 <motion.h1 
                   style={{ opacity }} 
-                  className={`${(scaleValue >= 0.15) ? 'text-white w-full' : 'text-dropbox-text w-5/6'} text-2xl font-bold tracking-tight leading-6 text-left`}
+                  className={`${(scaleValue >= 0.15) ? 'text-white w-full' : 'text-dropbox-text w-5/6'} ${(scaleValue >= 0.5) ? "hidden" : "block"} text-2xl font-bold tracking-tight leading-6 text-left`}
                   transition={{ duration: 0.15, ease: "easeInOut" }}  
                 >
                     {
@@ -67,10 +103,18 @@ export default function Initial() {
                     }
                 </motion.h1>
 
-
-                <div className="absolute bottom-4 left-4">
-                    <LogoXS />
-                </div>
+                <motion.div
+                  className="absolute bottom-0 left-0 origin-bottom-left"
+                  style={{ 
+                    x: smoothLogoX,
+                    y: smoothLogoY,
+                    scale: smoothLogoScale
+                  }}
+                >
+                    <LogoXS
+                      className={`${(scaleValue >= 0.15) ? "text-white self-center": "self-end text-dropbox-blue"} transition-all duration-150`}
+                    />
+                </motion.div>
             </motion.div>
         </section>
     )
