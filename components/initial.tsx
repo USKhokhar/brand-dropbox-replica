@@ -23,7 +23,7 @@ export default function Initial() {
     });
     const smoothLogoScale = useSpring(logoScale, { 
         stiffness: 100, 
-        damping: 20 
+        damping: 20
     });
 
     useEffect(() => {
@@ -87,13 +87,13 @@ export default function Initial() {
         <section className="absolute top-0 left-0 z-20 w-screen h-screen grid place-items-center">
             <motion.div
                 ref={containerRef}
-                className="relative border border-dropbox-blue-light w-5/6 mx-auto aspect-square p-4 grid"
+                className="relative border border-dropbox-blue-light w-5/6 md:w-2/5 mx-auto aspect-square p-4 md:p-5 grid"
                 style={{ scale, background }}
                 transition={{ duration: 0.15, ease: "easeInOut" }}
             >
                 <motion.h1 
                   style={{ opacity }} 
-                  className={`${(scaleValue >= 0.15) ? 'text-white w-full' : 'text-dropbox-text w-5/6'} ${(scaleValue >= 0.5) ? "hidden" : "block"} text-2xl font-bold tracking-tight leading-6 text-left`}
+                  className={`${(scaleValue >= 0.15) ? 'text-white w-full md:w-5/6' : 'text-dropbox-text md:w-1/2 w-5/6'} ${(scaleValue >= 0.5) ? "hidden" : "block"} text-2xl md:text-4xl font-bold tracking-tight leading-6 md:leading-10 text-left`}
                   transition={{ duration: 0.15, ease: "easeInOut" }}  
                 >
                     {
@@ -104,7 +104,7 @@ export default function Initial() {
                 </motion.h1>
 
                 <motion.div
-                  className="absolute bottom-0 left-0 origin-bottom-left"
+                  className="absolute bottom-5 left-5 origin-bottom-left"
                   style={{ 
                     x: smoothLogoX,
                     y: smoothLogoY,
