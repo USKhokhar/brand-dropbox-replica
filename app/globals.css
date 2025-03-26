@@ -5,6 +5,10 @@
   --foreground: #171717;
 
   /* Colors */
+  --dropbox-blue: rgb(0, 0, 238);
+  --dropbox-blue-light: rgb(95, 157, 255, 0.4);
+  --dropbox-text: #0061fe;
+
   --fw-background: #232d3d;
   --fw-text: #b4c8e1;
 
@@ -39,6 +43,10 @@
   --font-mono: var(--font-space-grotesk);
 
   /* Theme colors */
+  --color-dropbox-blue: var(--dropbox-blue);
+  --color-dropbox-blue-light: var(--dropbox-blue-light);
+  --color-dropbox-text: var(--dropbox-text);
+
   --color-fw-background: var(--fw-background);
   --color-fw-text: var(--fw-text);
 

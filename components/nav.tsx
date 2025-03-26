@@ -6,7 +6,7 @@ import Card from './ui/nav-card';
 
 const NavScreen = () => {
     return (
-        <div className="mx-auto w-screen p-1 h-screen min-h-screen rounded grid gap-1 md:gap-2 
+        <div className="bg-transparent absolute top-0 left-0 z-10 mx-auto w-screen p-1 h-screen min-h-screen rounded grid gap-1 md:gap-2 
             md:grid-rows-[2fr_0.5fr_2fr] md:grid-cols-[2fr_2fr_0.5fr_2fr_2fr] grid-rows-[2fr_2fr_0.5fr_2fr_2fr] grid-cols-[2fr_0.5fr_2fr]">
             <Card
                 heading='framework'
