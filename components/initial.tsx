@@ -84,7 +84,7 @@ export default function Initial() {
     });
 
     return (
-        <section className="absolute top-0 left-0 z-20 w-screen h-screen grid place-items-center">
+        <section className="absolute top-0 left-0 w-screen h-screen grid place-items-center">
             <motion.div
                 ref={containerRef}
                 className="relative border border-dropbox-blue-light w-5/6 md:w-2/5 mx-auto aspect-square p-4 md:p-5 grid"

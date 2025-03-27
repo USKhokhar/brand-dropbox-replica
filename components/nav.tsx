@@ -1,8 +1,10 @@
 'use client'
 
 import LogoXS from '@/assets/logo-xs.svg'
+import VTQuote from "@/assets/vt-quote.svg"
+
 import Card from './ui/nav-card';
-import { useMotionValue, useTransform } from 'motion/react';
+import { useMotionValue, useTransform, motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 
 const NavScreen = () => {
@@ -99,7 +101,13 @@ const NavScreen = () => {
                 initial={{ x: "-30%", y: "-100%" }}
                 style={{ translateX: vtX, translateY: vtY }}
             >
-                <LogoXS />
+               <motion.div className="relative grid grid-rows-3 md:grid-rows-4 w-full py-3">
+                    <VTQuote className="text-vt-text group-hover:text-transparent group-hover:stroke-[8px] group-hover:stroke-white md:w-24 w-12 group-hover:md:translate-x-12 group-hover:translate-x-6 transition-all duration-300" />
+                    <VTQuote 
+                        className="rotate-180 text-vt-text group-hover:text-transparent group-hover:stroke-[8px] group-hover:stroke-white w-12 md:w-24 row-start-3 md:row-start-4 justify-self-end group-hover:md:-translate-x-12 group-hover:-translate-x-6 transition-all duration-300" 
+                    />
+                </motion.div>
+
             </Card>
 
             {!isMobile && <Card 
