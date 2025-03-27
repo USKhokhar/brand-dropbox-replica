@@ -67,8 +67,8 @@ const NavScreen = () => {
     const logoY = useTransform(fakeScroll, [0.5, 1], ["-150%", "150%"])
 
 
-    const logoXmob = useTransform(fakeScroll, [0.5, 1], ["-150%", "10%"])
-    const logoYmob = useTransform(fakeScroll, [0.5, 1], ["-50%", "50%"])
+    const logoXmob = useTransform(fakeScroll, [0.5, 1], ["-100%", "100%"])
+    const logoYmob = useTransform(fakeScroll, [0.5, 1], ["-10%", "10%"])
 
     const colorX = useTransform(fakeScroll, [0.5, 1], ["-30%", "30%"])
     const colorY = useTransform(fakeScroll, [0.5, 1], ["150%", "-150%"])
@@ -115,7 +115,7 @@ const NavScreen = () => {
                 isMobile && <Card 
                 heading='Logo' 
                 className='bg-logo-background col-span-2 md:col-span-1 md:row-span-2 md:col-start-4 row-start-2 md:row-start-1 col-start-1' headingClassName='text-logo-text'
-                initial={{ x: "-10%", y: "-50%" }}
+                initial={{ x: "-100%", y: "-10%" }}
                 style={{ translateX: logoXmob, translateY: logoYmob }}
             >
                 <LogoXS />
