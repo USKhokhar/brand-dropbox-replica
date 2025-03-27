@@ -3,11 +3,21 @@
 import LogoXS from '@/assets/logo-xs.svg'
 import Card from './ui/nav-card';
 import { useMotionValue, useTransform } from 'motion/react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const NavScreen = () => {
-
     const fakeScroll = useMotionValue(0);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     useEffect(() => {
         let touchStartY = 0;
@@ -50,16 +60,23 @@ const NavScreen = () => {
     const motionX = useTransform(fakeScroll, [0.5, 1], ["100%", "-100%"])
     const motinoY = useTransform(fakeScroll, [0.5, 1], ["0%", "-100%"])
 
-    const vtX = useTransform(fakeScroll, [0.5, 1], ["-30%", "30%"])
+    const vtX = useTransform(fakeScroll, [0.5, 1], !isMobile ? ["-30%", "30%"] : ["100%", "30%"])
     const vtY = useTransform(fakeScroll, [0.5, 1], ["-100%", "100%"])
 
     const logoX = useTransform(fakeScroll, [0.5, 1], ["30%", "-30%"])
-    const logoY = useTransform(fakeScroll, [0.5, 1], ["-100%", "100%"])
+    const logoY = useTransform(fakeScroll, [0.5, 1], ["-150%", "150%"])
+
+
+    const logoXmob = useTransform(fakeScroll, [0.5, 1], ["-150%", "10%"])
+    const logoYmob = useTransform(fakeScroll, [0.5, 1], ["-50%", "50%"])
 
     const colorX = useTransform(fakeScroll, [0.5, 1], ["-30%", "30%"])
-    const colorY = useTransform(fakeScroll, [0.5, 1], ["100%", "-100%"])
+    const colorY = useTransform(fakeScroll, [0.5, 1], ["150%", "-150%"])
 
-    const imgX = useTransform(fakeScroll, [0.5, 1], ["30%", "-30%"])
+    const colorXmob = useTransform(fakeScroll, [0.5, 1], ["100%", "-100%"])
+    const colorYmob = useTransform(fakeScroll, [0.5, 1], ["10%", "-10%"])
+
+    const imgX = useTransform(fakeScroll, [0.5, 1], isMobile ? ["-100%", "-30%"] : ["30%", "-30%"])
     const imgY = useTransform(fakeScroll, [0.5, 1], ["100%", "-100%"])
 
 
@@ -85,14 +102,25 @@ const NavScreen = () => {
                 <LogoXS />
             </Card>
 
-            <Card 
+            {!isMobile && <Card 
                 heading='Logo' 
                 className='bg-logo-background col-span-2 md:col-span-1 md:row-span-2 md:col-start-4 row-start-2 md:row-start-1 col-start-1' headingClassName='text-logo-text'
-                initial={{ x: "30%", y: "-100%" }}
+                initial={{ x: "30%", y: "-150%" }}
                 style={{ translateX: logoX, translateY: logoY }}
             >
                 <LogoXS />
+            </Card>}
+
+            {
+                isMobile && <Card 
+                heading='Logo' 
+                className='bg-logo-background col-span-2 md:col-span-1 md:row-span-2 md:col-start-4 row-start-2 md:row-start-1 col-start-1' headingClassName='text-logo-text'
+                initial={{ x: "-10%", y: "-50%" }}
+                style={{ translateX: logoXmob, translateY: logoYmob }}
+            >
+                <LogoXS />
             </Card>
+            }
 
             <Card 
                 heading='Typography' 
@@ -112,14 +140,23 @@ const NavScreen = () => {
                 <LogoXS />
             </Card>
 
-            <Card 
+            {isMobile && <Card 
                 heading='Color' 
                 className='bg-clr-background col-span-2 col-start-2 row-start-4 md:col-span-1 md:row-span-full md:row-start-2 md:col-start-2' headingClassName='text-clr-text'
-                initial={{ x: "-30%", y: "100%" }}
+                initial={{ x: "100%", y: "10%" }}
+                style={{ translateX: colorXmob, translateY: colorYmob }}    
+            >
+                <LogoXS />
+            </Card>}
+
+            {!isMobile && <Card 
+                heading='Color' 
+                className='bg-clr-background col-span-2 col-start-2 row-start-4 md:col-span-1 md:row-span-full md:row-start-2 md:col-start-2' headingClassName='text-clr-text'
+                initial={{ x: "-30%", y: "150%" }}
                 style={{ translateX: colorX, translateY: colorY }}    
             >
                 <LogoXS />
-            </Card>
+            </Card>}
 
             <Card 
                 heading='Imagery' 
