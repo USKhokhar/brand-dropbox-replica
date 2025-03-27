@@ -2,6 +2,7 @@
 
 import LogoXS from '@/assets/logo-xs.svg'
 import VTQuote from "@/assets/vt-quote.svg"
+import Typo from "@/assets/typography.svg"
 
 import Card from './ui/nav-card';
 import { useMotionValue, useTransform, motion } from 'motion/react';
@@ -95,6 +96,7 @@ const NavScreen = () => {
                 <LogoXS />
             </Card>
 
+            {/* VOICE & TONE */}
             <Card 
                 heading='Voice & Tone' 
                 className='rounded-tr-md md:rounded-none bg-vt-background col-span-2 row-start-1 col-start-2' headingClassName='text-vt-text'
@@ -130,13 +132,16 @@ const NavScreen = () => {
             </Card>
             }
 
+            {/* TYPOGRAPHY */}
             <Card 
                 heading='Typography' 
-                className='bg-typo-background md:rounded-tr-md row-span-2 md:row-span-1 row-start-2 md:row-start-1 md:col-start-5 col-start-3' headingClassName='text-typo-text'
+                className='relative bg-typo-background md:rounded-tr-md row-span-2 md:row-span-1 row-start-2 md:row-start-1 md:col-start-5 col-start-3' headingClassName='text-typo-text'
                 initial={{ x: "100%", y: "-100%" }}
                 style={{ translateX: typoX, translateY: typoY }}    
             >
-                <LogoXS />
+                <Typo
+                    className='absolute bottom-4 right-4 md:w-72 w-24 text-typo-text group-hover:text-transparent group-hover:stroke-[4px] group-hover:stroke-white transition-all duration-300'
+                />
             </Card>
 
             <Card 
