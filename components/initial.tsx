@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useMotionValue, useTransform, useSpring, useMotionValueEvent } from "framer-motion"
+import { motion, useMotionValue, useTransform, useSpring, useMotionValueEvent } from "motion/react"
 import LogoXS from "@/assets/logo-xs.svg"
 import { useEffect, useState, useRef } from "react"
 
