@@ -1,3 +1,3 @@
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="color-color-circle" viewBox="0 0 150 150" width="150" height="150">
-<path d="M75 25C42.7594 25 25 42.7563 25 75C25 107.244 42.7594 125 75 125C107.241 125 125 107.244 125 75C125 42.7563 107.241 25 75 25Z" stroke-opacity="0" stroke="#000000" fill="#6D2E09" stroke-width="2px"></path>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="color-color-circle" viewBox="0 0 150 150">
+<path d="M75 25C42.7594 25 25 42.7563 25 75C25 107.244 42.7594 125 75 125C107.241 125 125 107.244 125 75C125 42.7563 107.241 25 75 25Z" fill="currentColor"></path>
 </svg>

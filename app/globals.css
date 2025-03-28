@@ -33,6 +33,9 @@
   --motion-background: #c8aff0;
   --motion-text: #682760;
 
+  --clr-svg-primary: #be4b0a;
+  --clr-svg-secondary: #6d2e09;
+
   --card-background-hover: #1a1918;
 }
 
@@ -64,6 +67,9 @@
 
   --color-clr-background: var(--clr-background);
   --color-clr-text: var(--clr-text);
+
+  --color-clr-svg-primary: var(--clr-svg-primary);
+  --color-clr-svg-secondary: var(--clr-svg-secondary);
 
   --color-img-background: var(--img-background);
   --color-img-text: var(--img-text);

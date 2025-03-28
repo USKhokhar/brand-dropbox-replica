@@ -3,6 +3,8 @@
 import LogoXS from '@/assets/logo-xs.svg'
 import VTQuote from "@/assets/vt-quote.svg"
 import Typo from "@/assets/typography.svg"
+import IconLock from "@/assets/icon-lock.svg"
+import ClrIn from "@/assets/color-top.svg"
 
 import Card from './ui/nav-card';
 import { useMotionValue, useTransform, motion } from 'motion/react';
@@ -84,7 +86,7 @@ const NavScreen = () => {
 
 
     return (
-        <div className="bg-transparent absolute top-0 left-0 z-10 mx-auto w-screen p-1 h-screen min-h-screen rounded grid gap-1 md:gap-2 overflow-hidden
+        <div className="bg-transparent absolute top-0 left-0 z-10 mx-auto w-screen p-1 h-screen min-h-screen rounded grid gap-1 md:gap-3 overflow-hidden
             md:grid-rows-[2fr_0.5fr_2fr] md:grid-cols-[2fr_2fr_0.5fr_2fr_2fr] grid-rows-[2fr_2fr_0.5fr_2fr_2fr] grid-cols-[2fr_0.5fr_2fr]">
             <Card
                 heading='framework'
@@ -140,17 +142,20 @@ const NavScreen = () => {
                 style={{ translateX: typoX, translateY: typoY }}    
             >
                 <Typo
-                    className='absolute bottom-4 right-4 md:w-72 w-24 text-typo-text group-hover:text-transparent group-hover:stroke-[4px] group-hover:stroke-white transition-all duration-300'
+                    className='absolute bottom-4 right-4 md:w-72 sm:w-36 w-24 text-typo-text group-hover:text-transparent group-hover:stroke-[4px] group-hover:stroke-white transition-all duration-300'
                 />
             </Card>
 
+            {/* ICONOGRAPHY */}
             <Card 
-                heading='Iconography' 
-                className='bg-icon-background md:rounded-bl-md row-span-2 row-start-3 col-start-1 md:row-start-3 md:col-start-1 md:row-span-1' headingClassName='text-typo-text'
+                heading='Iconography'
+                className='bg-icon-background md:rounded-bl-md row-span-2 row-start-3 col-start-1 md:row-start-3 md:col-start-1 md:row-span-1' headingClassName='text-icon-text'
                 initial={{ x: "-100%", y: "100%" }}   
                 style={{ translateX: iconX, translateY: iconY }}
             >
-                <LogoXS />
+                <IconLock
+                    className='md:w-36 w-24 text-icon-text group-hover:text-transparent group-hover:stroke-[4px] group-hover:stroke-white transition-all duration-300'
+                />
             </Card>
 
             {isMobile && <Card 
@@ -159,7 +164,25 @@ const NavScreen = () => {
                 initial={{ x: "100%", y: "10%" }}
                 style={{ translateX: colorXmob, translateY: colorYmob }}    
             >
-                <LogoXS />
+                <div
+                    className='w-32 aspect-square absolute right-4 bottom-4 grid'
+                >
+                    <motion.div
+                        className='w-1/2 aspect-square bg-clr-svg-primary grid place-items-center group-hover:translate-x-full transition-all duration-300 group-hover:bg-transparent group-hover:border-2 group-hover:border-white'
+                    >
+                        <ClrIn 
+                            className='w-11/12 text-clr-svg-secondary group-hover:text-transparent group-hover:stroke-2 group-hover:stroke-white'
+                        />
+                    </motion.div>
+
+                    <motion.div
+                        className='w-1/2 aspect-square bg-clr-svg-secondary grid place-items-center translate-x-full group-hover:translate-x-0 transition-all duration-300 group-hover:bg-transparent group-hover:border-2 group-hover:border-white'
+                    >
+                        <ClrIn 
+                            className='w-11/12 text-clr-svg-primary group-hover:text-transparent group-hover:stroke-2 group-hover:stroke-white'
+                        />
+                    </motion.div>
+                </div>
             </Card>}
 
             {!isMobile && <Card 
@@ -168,7 +191,25 @@ const NavScreen = () => {
                 initial={{ x: "-30%", y: "150%" }}
                 style={{ translateX: colorX, translateY: colorY }}    
             >
-                <LogoXS />
+                <div
+                    className='w-64 aspect-square absolute right-4 bottom-4 grid'
+                >
+                    <motion.div
+                        className='w-1/2 aspect-square bg-clr-svg-primary grid place-items-center group-hover:translate-x-full transition-all duration-300 group-hover:bg-transparent group-hover:border-2 group-hover:border-white'
+                    >
+                        <ClrIn 
+                            className='w-11/12 text-clr-svg-secondary group-hover:text-transparent group-hover:stroke-2 group-hover:stroke-white'
+                        />
+                    </motion.div>
+
+                    <motion.div
+                        className='w-1/2 aspect-square bg-clr-svg-secondary grid place-items-center translate-x-full group-hover:translate-x-0 transition-all duration-300 group-hover:bg-transparent group-hover:border-2 group-hover:border-white'
+                    >
+                        <ClrIn 
+                            className='w-11/12 text-clr-svg-primary group-hover:text-transparent group-hover:stroke-2 group-hover:stroke-white'
+                        />
+                    </motion.div>
+                </div>
             </Card>}
 
             <Card 
