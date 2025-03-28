@@ -1,11 +1,11 @@
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="hills" viewBox="0 0 250 150" fill="none" width="250"  height="150" >
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="hills" viewBox="0 0 250 150" >
 	<defs>
 		<path id="imagery-hills-path" d="M39 64.6059C16.4306 64.6059 0 83.8921 0 83.8921V150H250V34.2917C250 34.2917 229 0 202.602 0C155 0 136.444 87.8921 100 87.8921C77 87.8921 64 64.6059 39 64.6059Z"></path>
     <clipPath id="imagery-hills-clip">
       <use xlink:href="#imagery-hills-path"></use>
     </clipPath>
   <path id="imagery-hills-path" d="M39 64.6059C16.4306 64.6059 0 83.8921 0 83.8921V150H250V34.2917C250 34.2917 229 0 202.602 0C155 0 136.444 87.8921 100 87.8921C77 87.8921 64 64.6059 39 64.6059Z"></path><path id="imagery-hills-path" d="M39 64.6059C16.4306 64.6059 0 83.8921 0 83.8921V150H250V34.2917C250 34.2917 229 0 202.602 0C155 0 136.444 87.8921 100 87.8921C77 87.8921 64 64.6059 39 64.6059Z"></path></defs>
-  <g stroke-opacity="0" stroke="#000000" fill="#CD2F7B" stroke-width="2px">
-    <use xlink:href="#imagery-hills-path" stroke-width="4px" clip-path="url(#imagery-hills-clip)"></use>
+  <g fill="currentColor">
+    <use xlink:href="#imagery-hills-path" clip-path="url(#imagery-hills-clip)"></use>
   </g>
 </svg>

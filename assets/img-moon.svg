@@ -5,7 +5,7 @@
         <use xlink:href="#imagery-moon-path"></use>
       </clipPath>
     <path id="imagery-moon-path" d="M37.789 27.8581C37.789 27.8581 25.4475 32.7572 15.6202 22.5197C5.79294 12.2821 11.3735 0.765137 11.3735 0.765137C9.44381 1.70298 7.6356 2.97261 6.03402 4.57419C-1.71664 12.3248 -1.69319 24.9146 6.08638 32.6942C13.866 40.4737 26.4557 40.4972 34.2064 32.7465C35.6825 31.2704 36.8767 29.6187 37.789 27.8581Z"></path><path id="imagery-moon-path" d="M37.789 27.8581C37.789 27.8581 25.4475 32.7572 15.6202 22.5197C5.79294 12.2821 11.3735 0.765137 11.3735 0.765137C9.44381 1.70298 7.6356 2.97261 6.03402 4.57419C-1.71664 12.3248 -1.69319 24.9146 6.08638 32.6942C13.866 40.4737 26.4557 40.4972 34.2064 32.7465C35.6825 31.2704 36.8767 29.6187 37.789 27.8581Z"></path></defs>
-    <g stroke-opacity="0" stroke="#000000" fill="#CD2F7B" stroke-width="2px">
-      <use xlink:href="#imagery-moon-path" stroke-width="4px" clip-path="url(#imagery-moon-clip)"></use>
+    <g fill="currentColor">
+      <use xlink:href="#imagery-moon-path" clip-path="url(#imagery-moon-clip)"></use>
     </g>
   </svg>

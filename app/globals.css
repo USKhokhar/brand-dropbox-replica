@@ -33,6 +33,8 @@
   --motion-background: #c8aff0;
   --motion-text: #682760;
 
+  --img-svg-clr: #CD2F7B;
+
   --clr-svg-primary: #be4b0a;
   --clr-svg-secondary: #6d2e09;
 
@@ -76,6 +78,8 @@
 
   --color-motion-background: var(--motion-background);
   --color-motion-text: var(--motion-text);
+
+  --color-img-svg-clr: var(--img-svg-clr);
 
   --color-card-background-hover: var(--card-background-hover);
 }

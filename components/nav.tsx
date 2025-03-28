@@ -5,6 +5,9 @@ import VTQuote from "@/assets/vt-quote.svg"
 import Typo from "@/assets/typography.svg"
 import IconLock from "@/assets/icon-lock.svg"
 import ClrIn from "@/assets/color-top.svg"
+import ImgWave from "@/assets/img-waves.svg"
+import ImgSun from "@/assets/img-sun.svg"
+import ImgMoon from "@/assets/img-moon.svg"
 
 import Card from './ui/nav-card';
 import { useMotionValue, useTransform, motion } from 'motion/react';
@@ -158,6 +161,7 @@ const NavScreen = () => {
                 />
             </Card>
 
+            {/* COLOR */}
             {isMobile && <Card 
                 heading='Color' 
                 className='bg-clr-background col-span-2 col-start-2 row-start-4 md:col-span-1 md:row-span-full md:row-start-2 md:col-start-2' headingClassName='text-clr-text'
@@ -212,13 +216,27 @@ const NavScreen = () => {
                 </div>
             </Card>}
 
+            {/* IMAGERY */}
             <Card 
                 heading='Imagery' 
                 className='bg-img-background rounded-bl-md md:rounded-none col-start-1 row-start-5 col-span-2 md:row-start-3 md:col-start-3 md:col-span-2' headingClassName='text-img-text'
                 initial={{ x: "30%", y: "100%" }}
                 style={{ translateX: imgX, translateY: imgY }}    
             >
-                <LogoXS />
+                <div
+                    className='w-32 md:w-64 aspect-square absolute bottom-4 right-4 bg-img-text group-hover:bg-transparent group-hover:border group-hover:border-white'
+                >   
+                    <ImgWave 
+                        className='absolute w-full left-0 -bottom-0.5 text-img-svg-clr group-hover:text-card-background-hover z-20 group-hover:stroke-2 group-hover:stroke-white'
+                    />
+
+                    <motion.div
+                        className='absolute md:top-2 md:left-2 z-10 translate-x-full md:translate-x-[200%] translate-y-[60%] md:translate-y-[80%] -rotate-12 group-hover:rotate-180 transition-all duration-700 grid md:gap-1 grid-rows-2 md:grid-rows-3 group-hover:text-transparent group-hover:bg-transparent group-hover:broder group-hover:border-white'
+                    >
+                        <ImgSun className='group-hover:text-transparent group-hover:stroke-2 group-hover:stroke-white text-img-svg-clr scale-50 md:scale-100' />
+                        <ImgMoon className='row-start-2 md:row-start-3 rotate-180 group-hover:text-transparent group-hover:stroke-2 group-hover:stroke-white text-img-svg-clr  scale-50 md:scale-100'/>
+                    </motion.div>
+                </div>
             </Card>
 
             <Card 
