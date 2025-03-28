@@ -1,6 +1,6 @@
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="motion-bezier-path" viewBox="0 0 100 100" preserveAspectRatio="none" width="290"  height="801" >
-  <path d="M 0,75 C 30,75 60,25 100,25" stroke="#682760" fill="none" stroke-width="2px">
-    <animate attributeName="d" dur="0.35s" fill="none" keyTimes="0; 1" keySplines=".4 0 .2 1" calcMode="spline" to="M 0,75 C 65,75 35,25 100,25" begin="tilemotion.mouseover" stroke="#682760" stroke-width="2px"></animate>
-    <animate attributeName="d" dur="0.35s" fill="none" keyTimes="0; 1" keySplines=".4 0 .2 1" calcMode="spline" to="M 0,75 C 30,75 60,25 100,25" begin="tilemotion.mouseout" stroke="#682760" stroke-width="2px"></animate>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" class="motion-bezier-path" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <path d="M 0,75 C 30,75 60,25 100,25" fill="none" >
+    <animate attributeName="d" dur="0.35s" fill="none" keyTimes="0; 1" keySplines=".4 0 .2 1" calcMode="spline" to="M 0,75 C 65,75 35,25 100,25" begin="tilemotion.mouseover" ></animate>
+    <animate attributeName="d" dur="0.35s" fill="none" keyTimes="0; 1" keySplines=".4 0 .2 1" calcMode="spline" to="M 0,75 C 30,75 60,25 100,25" begin="tilemotion.mouseout" ></animate>
   </path>
 </svg>

@@ -8,6 +8,9 @@ import ClrIn from "@/assets/color-top.svg"
 import ImgWave from "@/assets/img-waves.svg"
 import ImgSun from "@/assets/img-sun.svg"
 import ImgMoon from "@/assets/img-moon.svg"
+import LogoXL from "@/assets/logo-xl.svg"
+import Dot from "@/assets/motion-dot.svg"
+import MotionCurve from "@/assets/motion-curve.svg"
 
 import Card from './ui/nav-card';
 import { useMotionValue, useTransform, motion } from 'motion/react';
@@ -117,13 +120,20 @@ const NavScreen = () => {
 
             </Card>
 
+            {/* LOGO */}
             {!isMobile && <Card 
                 heading='Logo' 
                 className='bg-logo-background col-span-2 md:col-span-1 md:row-span-2 md:col-start-4 row-start-2 md:row-start-1 col-start-1' headingClassName='text-logo-text'
                 initial={{ x: "30%", y: "-150%" }}
                 style={{ translateX: logoX, translateY: logoY }}
             >
-                <LogoXS />
+                <motion.div
+                    className='w-64 aspect-square absolute bottom-0 right-0'
+                >
+                    <LogoXL 
+                        className='w-full text-logo-text group-hover:text-transparent group-hover:stroke-4 group-hover:stroke-white transition-all duration-300'
+                    />
+                </motion.div>
             </Card>}
 
             {
@@ -133,7 +143,13 @@ const NavScreen = () => {
                 initial={{ x: "-100%", y: "-10%" }}
                 style={{ translateX: logoXmob, translateY: logoYmob }}
             >
-                <LogoXS />
+                <motion.div
+                    className='w-32 aspect-square absolute bottom-0 left-0'
+                >
+                    <LogoXL 
+                        className='w-full text-logo-text group-hover:text-transparent group-hover:stroke-4 group-hover:stroke-white transition-all duration-300'
+                    />
+                </motion.div>
             </Card>
             }
 
@@ -245,7 +261,42 @@ const NavScreen = () => {
                 initial={{ x: "100%", y: "100%" }}
                 style={{ translateX: motionX, translateY: motinoY }}
             >
-                <LogoXS />
+                 <motion.div
+                    className='border border-red-500 mx-auto w-full aspect-square relative'
+                >
+
+                    <MotionCurve 
+                        className='w-full -rotate-[25deg] skew-[10deg] scale-135 stroke-1 stroke-motion-text group-hover:stroke-white group-hover:stroke-[1px] transition-all duration-300'
+                    />
+                    {/* Corner Dots */}
+                    <Dot 
+                    className='w-6 text-motion-text group-hover:text-card-background-hover z-10 group-hover:stroke-1 group-hover:stroke-white transition-all duration-300 absolute top-0 right-0 '
+                    />
+                    <motion.svg
+                        className={"absolute w-16 -top-10 right-4 group-hover:w-32 transition-all duration-300"}
+                    >
+                        <motion.line x1="10" y1="50" x2="190" y2="50" className={"stroke-motion-text group-hover:stroke-white"} strokeWidth="4" />
+                    </motion.svg>
+
+
+                    <Dot 
+                    className='w-6 text-motion-text group-hover:text-card-background-hover z-10 group-hover:stroke-1 group-hover:stroke-white transition-all duration-300 absolute top-0 right-16  group-hover:-translate-x-16'
+                    />
+                    <Dot 
+                    className='w-6 text-motion-text group-hover:text-card-background-hover z-10 group-hover:stroke-1 group-hover:stroke-white transition-all duration-300 absolute bottom-0 left-16 group-hover:translate-x-16'
+                    />
+
+                    <motion.svg
+                        className={"absolute w-16 -bottom-22 left-2 group-hover:w-32 transition-all duration-300"}
+                    >
+                        <motion.line x1="10" y1="50" x2="190" y2="50" className={"stroke-motion-text group-hover:stroke-white"} strokeWidth="4" />
+                    </motion.svg>
+
+                    <Dot
+                    className='w-6 text-motion-text group-hover:text-card-background-hover z-10 group-hover:stroke-1 group-hover:stroke-white transition-all duration-300 absolute bottom-0 left-0'
+                    />
+
+                </motion.div>
             </Card>
         </div>
     )
