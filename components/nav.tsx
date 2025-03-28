@@ -1,6 +1,6 @@
 'use client'
 
-import LogoXS from '@/assets/logo-xs.svg'
+import FWStraight from "@/assets/fw-straight.svg"
 import VTQuote from "@/assets/vt-quote.svg"
 import Typo from "@/assets/typography.svg"
 import IconLock from "@/assets/icon-lock.svg"
@@ -94,6 +94,8 @@ const NavScreen = () => {
     return (
         <div className="bg-transparent absolute top-0 left-0 z-10 mx-auto w-screen p-1 h-screen min-h-screen rounded grid gap-1 md:gap-3 overflow-hidden
             md:grid-rows-[2fr_0.5fr_2fr] md:grid-cols-[2fr_2fr_0.5fr_2fr_2fr] grid-rows-[2fr_2fr_0.5fr_2fr_2fr] grid-cols-[2fr_0.5fr_2fr]">
+
+            {/* FRAMEWORK */}
             <Card
                 heading='framework'
                 className='bg-fw-background rounded-tl-md md:row-span-2 row-start-1 col-start-1'
@@ -101,7 +103,34 @@ const NavScreen = () => {
                 initial={{ x: "-100%", y: "-100%" }}
                 style={{ translateX: fwX, translateY: fwY }}
             >
-                <LogoXS />
+                <motion.div
+                    className='mx-auto w-full aspect-square relative'
+                >
+                    
+                    <Dot 
+                        className='w-6 text-fw-text group-hover:text-card-background-hover z-10 group-hover:stroke-1 group-hover:stroke-white transition-all duration-300 absolute top-4 left-0 '
+                    />
+
+                    <motion.svg
+                        className={"absolute w-full md:top-50 md:left-50 top-0 -left-5 scale-100 md:scale-240 transition-all duration-300 rotate-[25deg]"}
+                    >
+                        <motion.line x1="10" y1="50" x2="190" y2="50" className={"stroke-fw-text group-hover:stroke-white"} strokeWidth="2" />
+                    </motion.svg>
+
+                    <motion.svg
+                        className={"absolute w-full md:top-45 top-15 md:left-60 md:scale-230 transition-all duration-300 -rotate-[25deg]"}
+                    >
+                        <motion.line x1="10" y1="50" x2="190" y2="50" className={"stroke-fw-text group-hover:stroke-white"} strokeWidth="2" />
+                    </motion.svg>
+
+                    <Dot 
+                        className='w-6 text-fw-text group-hover:text-card-background-hover z-10 group-hover:stroke-1 group-hover:stroke-white transition-all duration-300 absolute top-[48%] right-0 '
+                    />
+                    
+                    <Dot 
+                        className='w-6 text-fw-text group-hover:text-card-background-hover z-10 group-hover:stroke-1 group-hover:stroke-white transition-all duration-300 absolute bottom-0 left-0 '
+                    />
+                </motion.div>
             </Card>
 
             {/* VOICE & TONE */}
@@ -255,6 +284,7 @@ const NavScreen = () => {
                 </div>
             </Card>
 
+            {/* MOTION */}
             <Card 
                 heading='Motion' 
                 className='bg-motion-background rounded-br-md col-start-3 row-start-5 md:row-span-2 md:row-start-2 md:col-start-5 ' headingClassName='text-motion-text'
@@ -262,7 +292,7 @@ const NavScreen = () => {
                 style={{ translateX: motionX, translateY: motinoY }}
             >
                  <motion.div
-                    className='border border-red-500 mx-auto w-full aspect-square relative'
+                    className='mx-auto w-full aspect-square relative'
                 >
 
                     <MotionCurve 
